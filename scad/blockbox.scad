@@ -44,14 +44,19 @@ module remo0() {
   dh = border_radius / 2.8 + wall_height / 2;
   l = box_ex_length * 1.1;
   translate([ 0, l / 2, dh ]) rotate([ 90, 30, 0 ]) cylinder(r=rad, h=l, $fn=3);
+  //translate([ 0, l / 2, dh ]) rotate([ 90, 0, 0 ]) cylinder(r=rad, h=l, $fn=12);
+  //translate([ 0, l / 2, dh * 0.8 ]) rotate([ 90, 45, 0 ]) cylinder(r=rad, h=l, $fn=4);
 };
+module remo1() {
+  rotate([ 0, 0, 90 ]) remo0();
+}
 
 handle_radius = 11;
 
 module handle() {
 
   wh = wall_height + 3;
-  hh = block_height - handle_radius * 2;
+  hh = block_height * 0.8 - handle_radius * 2;
 
   hull() {
     translate([ 0, 0, wh ]) rotate([ 90, 0, 0 ])
@@ -96,6 +101,16 @@ difference() {
   for (x = [ -box_ex_length / 2 + rad * 2.8 : rad4 : box_ex_length / 2 ]) {
     translate([ x, 0, 0 ]) remo0();
   }
+
+  hr2 = handle_radius / 2;
+  translate([ -hr2, 0, block_height * 0.28 ]) remo0();
+  translate([  hr2, 0, block_height * 0.28 ]) remo0();
+  translate([  0, 0, block_height * 0.42 ]) remo0();
+
+  y = box_in_width / 3;
+  remo1();
+  translate([ 0,  y, 0 ]) remo1();
+  translate([ 0, -y, 0 ]) remo1();
 };
 
 
