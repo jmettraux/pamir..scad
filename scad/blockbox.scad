@@ -26,9 +26,9 @@ box_ex_width = box_in_width + 2 * wall_thickness;
 
 border_radius = wall_thickness / 2 * 1.1;
 
-el2 = box_ex_length * 0.5 - border_radius;
-ew2 = box_ex_width * 0.5 - border_radius;
 wt2 = wall_thickness / 2;
+el2 = box_ex_length * 0.5 - wt2;
+ew2 = box_ex_width * 0.5 - wt2;
 
 
 hull() { // bottom
