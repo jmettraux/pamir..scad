@@ -46,6 +46,21 @@ module remo0() {
   translate([ 0, l / 2, dh ]) rotate([ 90, 30, 0 ]) cylinder(r=rad, h=l, $fn=3);
 };
 
+handle_radius = 11;
+
+module handle() {
+
+  wh = wall_height + 3;
+  hh = block_height - handle_radius * 2;
+
+  hull() {
+    translate([ 0, 0, wh ]) rotate([ 90, 0, 0 ])
+      cylinder(r=handle_radius, h=wall_thickness * 0.97, $fn=32, center=true);
+    translate([ 0, 0, wh + hh ]) rotate([ 90, 0, 0 ])
+      cylinder(r=handle_radius, h=wall_thickness * 0.97, $fn=32, center=true);
+  }
+};
+
 difference() {
   union() {
     hull() {
@@ -72,6 +87,8 @@ difference() {
       translate([  el2,  -ew2, wall_height ]) sphere(r=wt2);
       translate([ -el2,  -ew2, wall_height ]) sphere(r=wt2);
     };
+    translate([ 0,  ew2, 0 ]) handle();
+    translate([ 0, -ew2, 0 ]) handle();
   };
 
   rad4 = rad * 4.9;
@@ -80,4 +97,5 @@ difference() {
     translate([ x, 0, 0 ]) remo0();
   }
 };
+
 
