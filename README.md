@@ -1,6 +1,8 @@
 
 # pamir.scad
 
+Pax Pamir second edition 3d models.
+
 
 ## license
 
