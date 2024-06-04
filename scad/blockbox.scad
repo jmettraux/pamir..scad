@@ -18,10 +18,11 @@ block_side = 15;
 wall_thickness = 2.8;
 wall_height = block_height * 0.28;
 
-box_in_length = 12 * (block_side + 0.2);
+gap = 0.25;
+box_in_length = 12 * (block_side + gap);
 box_ex_length = box_in_length + 2 * wall_thickness;
 
-box_in_width = 3 * (block_side + 0.2);
+box_in_width = 3 * (block_side + gap);
 box_ex_width = box_in_width + 2 * wall_thickness;
 
 border_radius = wall_thickness / 2 * 1.1;
