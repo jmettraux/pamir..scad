@@ -60,7 +60,7 @@ handle_radius = 11;
 module handle() {
 
   wh = wall_height + 3;
-  hh = block_height * 0.91 - handle_radius * 2;
+  hh = block_height * 0.89 - handle_radius * 2;
 
   hull() {
     translate([ 0, 0, wh ]) rotate([ 90, 0, 0 ])
@@ -117,9 +117,9 @@ difference() {
 
   hr2 = handle_radius / 2;
   //translate([  0, 0, block_height * 0.19 ]) remo0();
-  translate([ -hr2, 0, block_height * 0.39 ]) remo0();
-  translate([  hr2, 0, block_height * 0.39 ]) remo0();
-  translate([  0, 0, block_height * 0.63 ]) remo0();
+  translate([ -hr2, 0, block_height * 0.30 ]) remo0();
+  translate([  hr2, 0, block_height * 0.30 ]) remo0();
+  translate([  0, 0, block_height * 0.59 ]) remo0();
 };
 
 
