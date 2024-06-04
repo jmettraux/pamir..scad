@@ -60,7 +60,7 @@ handle_radius = 11;
 module handle() {
 
   wh = wall_height + 3;
-  hh = block_height * 0.8 - handle_radius * 2;
+  hh = block_height * 0.91 - handle_radius * 2;
 
   hull() {
     translate([ 0, 0, wh ]) rotate([ 90, 0, 0 ])
@@ -100,21 +100,26 @@ difference() {
     translate([ 0, -ew2, 0 ]) handle();
   };
 
-  rad4 = rad * 5.6;
-
-  for (x = [ -box_ex_length / 2 + rad * 2.8 : rad4 : box_ex_length / 2 ]) {
-    translate([ x, 0, 0 ]) remo0();
+  bside = block_side + gap;
+  bside2 = bside / 2;
+    //
+  for (x = [ -1 : -1 : -6 ]) {
+    translate([ bside2 + x * bside, 0, 0 ]) remo0();
   }
-
-  hr2 = handle_radius / 2;
-  translate([ -hr2, 0, block_height * 0.28 ]) remo0();
-  translate([  hr2, 0, block_height * 0.28 ]) remo0();
-  translate([  0, 0, block_height * 0.42 ]) remo0();
+  for (x = [ 1 : 6 ]) {
+    translate([ -bside2 + x * bside, 0, 0 ]) remo0();
+  }
 
   y = box_in_width / 3;
   remo1();
   translate([ 0,  y, 0 ]) remo1();
   translate([ 0, -y, 0 ]) remo1();
+
+  hr2 = handle_radius / 2;
+  //translate([  0, 0, block_height * 0.19 ]) remo0();
+  translate([ -hr2, 0, block_height * 0.39 ]) remo0();
+  translate([  hr2, 0, block_height * 0.39 ]) remo0();
+  translate([  0, 0, block_height * 0.63 ]) remo0();
 };
 
 
