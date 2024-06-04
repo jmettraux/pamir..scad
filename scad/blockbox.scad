@@ -18,12 +18,15 @@ block_side = 15;
 wall_thickness = 2.8;
 wall_height = block_height * 0.28;
 
-gap = 0.25;
+gap = 0.70;
 box_in_length = 12 * (block_side + gap);
 box_ex_length = box_in_length + 2 * wall_thickness;
 
 box_in_width = 3 * (block_side + gap);
 box_ex_width = box_in_width + 2 * wall_thickness;
+
+echo("box_in_width", box_in_width);
+echo("box_in_length", box_in_length);
 
 border_radius = wall_thickness / 2 * 1.1;
 
@@ -97,7 +100,7 @@ difference() {
     translate([ 0, -ew2, 0 ]) handle();
   };
 
-  rad4 = rad * 4.9;
+  rad4 = rad * 5.6;
 
   for (x = [ -box_ex_length / 2 + rad * 2.8 : rad4 : box_ex_length / 2 ]) {
     translate([ x, 0, 0 ]) remo0();
