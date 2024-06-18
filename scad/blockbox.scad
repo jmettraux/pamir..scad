@@ -15,14 +15,14 @@ $fn=12;
 block_height = 33;
 block_side = 15;
 
-wall_thickness = 2.8;
+wall_thickness = 2.6;
 wall_height = block_height * 0.28;
 
 gap = 0.70;
 box_in_length = 12 * (block_side + gap);
 box_ex_length = box_in_length + 2 * wall_thickness;
 
-box_in_width = 3 * (block_side + gap);
+box_in_width = 3 * (block_side + gap) + gap;
 box_ex_width = box_in_width + 2 * wall_thickness;
 
 echo("box_in_width", box_in_width);
